@@ -1,0 +1,328 @@
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInPage 1s forwards;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.error-text {
+  background-color: #e74c3c; 
+  color: #fff;
+}
+
+.error-highlight {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+#background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  filter: brightness(0.4);
+
+}
+
+
+.exit-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.exit-button:hover {
+  color: red; 
+}
+
+
+.container {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: #fff;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+
+
+
+
+
+.completion-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; 
+  backdrop-filter: blur(5px); 
+
+  background: rgba(0, 0, 0, 0.7); 
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+
+  animation: fadeIn 1s; 
+}
+
+.completion-content {
+  background: rgba(0, 0, 0, 0.5); 
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.completion-message h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.next-round-button {
+  display: block; 
+  background-color: #27ae60; 
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  text-decoration: none;
+  margin-top: 20px;
+
+  animation: scaleIn 1s; 
+}
+.next-round-button:hover {
+  background-color: #219f56; 
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.retry-round-button {
+  display: block; 
+  background-color: #a32b2b; 
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  text-decoration: none;
+  margin-top: 20px;
+
+  animation: scaleIn 1s; 
+}
+.retry-round-button:hover {
+  background-color: #ca3535; 
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+
+
+.game-board {
+  display: flex;
+  justify-content: center; /* Центрируем по горизонтали */
+  margin-top: 70px;
+  margin-bottom: 115px;
+}
+
+
+.card.selected {
+  transform: scale(1.1); /* Увеличиваем выбранную карточку */
+  border: 4px solid #ffcc00; /* Жёлтая рамка для выбранной карточки */
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  color: #fff;
+  border: 2px solid #9c0821; /* Яркий жёлтый */
+  border-radius: 15px; /* Увеличили радиус скругления границ */
+  text-align: center;
+  font-family: 'Press Start 2P', sans-serif; /* Используем шрифт, напоминающий шрифты видеоигр */
+  font-size: 20px; /* Увеличили размер шрифта */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Выравниваем по центру */
+  cursor: pointer;
+  margin: 20px;
+  padding: 20px;
+  transition: transform 0.3s, background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  border: 2px solid #ff3d5e; /* Яркий жёлтый */
+  transform: scale(1.03);
+}
+
+.card h2 {
+  font-size: 28px; /* Увеличиваем размер заголовка */
+  margin: 10px 0; /* Уменьшаем отступы заголовка */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Добавляем тень тексту */
+}
+
+.card:active::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: moveGlow 1s infinite;
+}
+
+@keyframes moveGlow {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+
+
+/*  стили для игрового экрана, который будет отображаться при клике на карточку */
+.game-screen {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 1000px;
+  height: 80%;
+  max-height: 500px;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  animation: openGameScreen 0.5s forwards;
+}
+
+@keyframes openGameScreen {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.game-board {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.exit-game-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 3; 
+  color: #fff; 
+}
+
+.exit-game-button:hover {
+  color: red;
+}
+
+/* Стили для текста на всплывающих карточках */
+.definition-with-errors,
+.definition-without-errors {
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.definition-with-errors:hover,
+.definition-without-errors:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.check-button {
+  background-color: #4CAF50; /* Зеленый цвет фона */
+  color: #fff; /* Белый цвет текста */
+  border: none; /* Убираем границу */
+  padding: 10px 20px; /* Отступы вокруг текста */
+  margin: 20px;
+  cursor: pointer; /* Курсор при наведении */
+  font-size: 16px; /* Размер шрифта */
+  border-radius: 5px; /* Закругленные углы */
+  transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+}
+
+.check-button:hover {
+  background-color: #45a049; /* Цвет фона при наведении */
+}
+
+.check-button:active {
+  background-color: #3e9343; /* Цвет фона при клике */
+}

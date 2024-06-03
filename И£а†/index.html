@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Онлайн-игра "ФИНАНСИСТ"</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="media/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <video autoplay muted loop id="background-video">
+      <source src="media/background.webm" type="video/mp4">
+      Ваш браузер не поддерживает видео.
+    </video>
+    <img id="logo" src="media/logo2.png" alt="Логотип игры">
+    <h1 id="title">Онлайн-игра "ФИНАНСИСТ"</h1>
+    <p id="description">Добро пожаловать в игру Финансист,<br> проверь свои знания или узнай новое.</p><br>
+    <button id="start-button" class="btn" onclick="startRound1()">Играть</button>
+    <button id="help" class="btn" onclick="playSoundAndNavigate('sounds/help.mp3', 'material.html')">Изучить материал</button>
+  </div>
+
+  <script>
+    function startRound1() {
+      playSoundAndNavigate('sounds/play.mp3', 'rounds/round1.html');
+    }
+
+    function playSoundAndNavigate(soundPath, targetURL) {
+      var audio = new Audio(soundPath);
+      audio.play();
+      audio.onended = function() {
+        window.location.href = targetURL;
+      };
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+body {
+    position: relative;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    filter: brightness(0.3);
+  }
+  
+  .container {
+    text-align: center;
+    padding: 150px 0;
+    position: relative;
+    z-index: 1;
+    opacity: 0; /* Начальное значение прозрачности контейнера */
+    animation: fadeIn 2s ease-in-out forwards; /* Анимация появления контейнера */
+  }
+  
+  img#logo {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto 20px;
+    opacity: 0; /* Начальное значение прозрачности логотипа */
+    animation: fadeIn 3s 0.5s ease-in-out forwards; /* Анимация появления логотипа с задержкой */
+  }
+  
+  h1#title {
+    font-size: 36px;
+    margin: 20px 0;
+    opacity: 0; /* Начальное значение прозрачности заголовка */
+    animation: fadeIn 2s 1s ease-in-out forwards; /* Анимация появления заголовка с задержкой */
+  }
+  
+  p#description {
+    font-size: 24px;
+    opacity: 0; /* Начальное значение прозрачности описания */
+    animation: fadeIn 2s 1.5s ease-in-out forwards; /* Анимация появления описания с задержкой */
+  }
+  
+  
+
+  .btn {
+    background: linear-gradient(45deg, #770000, #8d1a1a);
+    color: #fff;
+    font-size: 24px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation: fadeIn 2s 2s ease-in-out forwards;
+  }
+  
+  .btn:hover {
+    background: linear-gradient(45deg, #FF0000, #770000);
+    color: #fff;
+    transform: scale(1.1); /* Увеличивает размер кнопки при наведении */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Добавляет тень при наведении */
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+/* Стили для контейнера определений */
+.materials {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(49, 49, 49, 0.8);
+  border-radius: 20px;
+}
+
+/* Стили для блоков определений */
+.term-definition {
+  margin-bottom: 20px;
+}
+
+.term-definition h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.term-definition p {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+
+/* Дополнительные стили для выравнивания текста по левому краю */
+.term-definition h3,
+.term-definition p {
+  text-align: left;
+  margin-left: 40px;
+}

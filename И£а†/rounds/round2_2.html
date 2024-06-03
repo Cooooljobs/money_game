@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Раунд 3 - Загадки</title>
+  <link rel="stylesheet" href="round2.css">
+  <link rel="icon" href="../media/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <video id="background-video" autoplay loop muted>
+    <source src="../media/background.webm" type="video/mp4">
+  </video>
+  <div class="container">
+    <h1>РАУНД 3 - ЗАГАДКИ</h1>
+    <h4><b>Задание: отгадайте загадки, связанные с финансовыми терминами и понятиями.</b><br></h4>
+    <h4>Правила игры: Внимательно прочитайте загадки, связанные с финансовыми терминами,<br>и выберите правильный вариант ответа, кликнув на соответствующую карточку.</h4>
+    <br><br>
+    <div class="game-board">
+      <!-- Загадки и ответы будут добавлены динамически с помощью JavaScript -->
+    </div>
+    <span class="exit-button" onclick="exitGame()">✖</span>
+  </div>
+  <script src="round2_2.js"></script>
+  <script>
+    function exitGame() {
+      window.location.href = "../index.html";
+    }
+  </script>
+</body>
+</html>

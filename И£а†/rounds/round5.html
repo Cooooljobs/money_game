@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Раунд 7 - Ребусы</title>
+  <link rel="stylesheet" href="round5.css">
+  <link rel="icon" href="../media/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <video id="background-video" autoplay loop muted>
+    <source src="../media/background.webm" type="video/mp4">
+  </video>
+
+  <!-- Звуковой файл для воспроизведения при нажатии на rebus-option -->
+  <audio id="select-sound" src="../sounds/go.mp3"></audio>
+
+  <div class="container">
+    <h1>РАУНД 7 - РЕБУСЫ</h1>
+    <h3> <b>Задание: Разгадайте ребус и выберите правильный ответ.</b><br></h3>
+    <h4></h4> <br><br>
+    
+    <div class="game-board">
+      <div class="rebus">
+        <img src="../media/round5img/rebus2.png" alt="Ребус 1">
+        <div class="rebus-options">
+          <select class="rebus-option" data-correct="сейф">
+            <option>Карта</option>
+            <option>Деньги</option>
+            <option>Банк</option>
+            <option>Сейф</option>
+            <option>Касса</option>
+            <option>Кошелек</option>
+          </select>
+        </div>
+      </div>
+      
+      
+      
+      <div class="rebus">
+        <img src="../media/round5img/rebus3.png" alt="Ребус 2">
+        <div class="rebus-options">
+          <select class="rebus-option" data-correct="Кошелек">
+            <option>Карта</option>
+            <option>Деньги</option>
+            <option>Банк</option>
+            <option>Сейф</option>
+            <option>Касса</option>
+            <option>Кошелек</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="rebus">
+        <img src="../media/round5img/rebus1.png" alt="Ребус 3">
+        <div class="rebus-options">
+          <select class="rebus-option" data-correct="Касса">
+            <option>Карта</option>
+            <option>Деньги</option>
+            <option>Банк</option>
+            <option>Сейф</option>
+            <option>Касса</option>
+            <option>Кошелек</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+    
+    <span class="exit-button" onclick="exitGame()">✖</span>
+  </div>
+
+  <script src="round5.js"></script>
+  <script src="fireworks.js"></script>
+  <script>
+    function exitGame() {
+      // Добавьте код для завершения игры и перехода на главную страницу
+      window.location.href = "../index.html";
+    }
+
+    // Получаем все элементы .rebus-option и добавляем обработчики событий для каждого из них
+    const rebusOptions = document.querySelectorAll('.rebus-option');
+    rebusOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        // Воспроизводим звук при нажатии на rebus-option
+        playSelectSound();
+      });
+    });
+
+    // Функция для воспроизведения звука при нажатии на rebus-option
+    function playSelectSound() {
+      const selectSound = document.getElementById('select-sound');
+      selectSound.play();
+    }
+  </script>
+</body>
+</html>

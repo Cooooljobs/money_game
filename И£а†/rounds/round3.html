@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Раунд 4 - Банкомат</title>
+  <link rel="stylesheet" href="round3.css">
+  <link rel="icon" href="../media/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <video id="background-video" autoplay loop muted>
+    <source src="../media/background.webm" type="video/mp4">
+  </video>
+
+  <!-- Аудиоэлемент для воспроизведения звука "go" -->
+  <audio id="go-sound">
+    <source src="../sounds/go.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <h1>РАУНД 4 - БАНКОМАТ</h1>
+    <h4><b>Задание: Необходимо на модели банкомата расположить его составляющие.</b></h4>
+    <h4>Выберите составляющие из ячеек чтобы пройти уровень. <br>
+    Если вы сделали неправильный выбор, попробуйте снова.</h4>
+
+    <div class="game-board">
+      
+      <div class="left-side">
+        
+        <div class="empty-box empty-box-1" onclick="playSound()"></div>
+        <div class="empty-box empty-box-3" onclick="playSound()"></div>
+        <div class="empty-box empty-box-5" onclick="playSound()"></div>
+      </div>
+      <img src="../media/atm.png" alt="Heart Model" id="heart-model" class="heart-image">
+
+    
+      <div class="right-side">
+        <div class="empty-box empty-box-7" onclick="playSound()"></div>
+        <div class="empty-box empty-box-8" onclick="playSound()"></div>
+        <div class="empty-box empty-box-9" onclick="playSound()"></div>
+
+      </div>
+
+
+    </div>
+    
+    <button id="check-button" onclick="checkSelection()">Проверить выбор</button>
+
+    <span class="exit-button" onclick="exitGame()">✖</span>
+  </div>
+  
+      
+
+
+  <script src="round3.js"></script>
+  <script>
+    function playSound() {
+      var audio = document.getElementById("go-sound");
+      audio.play();
+    }
+
+    function exitGame() {
+      window.location.href = "../index.html";
+    }
+  </script>
+</body>
+</html>

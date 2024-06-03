@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Раунд 6 - Финансовое мошенничество</title>
+  <link rel="stylesheet" href="round4_4.css">
+  <link rel="icon" href="../media/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <video id="background-video" autoplay loop muted>
+    <source src="../media/background.webm" type="video/mp4">
+  </video>
+
+  <audio id="click-sound" src="../sounds/go.mp3"></audio>
+
+  <div class="container">
+    <h1>РАУНД 6 - ФИНАНСОВОЕ МОШЕННИЧЕСТВО</h1>
+    <h4><b>Задание: необходимо выбрать 2 реальных финансовых сценария из предложенных</b></h4>
+    <h4><br>Правила игры: из представленного списка финансовых сценариев на экране выберите два, которые, по вашему мнению, являются реальными предложениями. <br>
+      После выбора двух сценариев, нажмите на кнопку "Подтвердить выбор", чтобы проверить свой ответ.<br>
+      Если выбранные вами сценарии оказались неправильными, то игра сообщит вам об этом, и вы сможете повторить раунд.<br>
+      
+    </h4><br>
+    
+    <div class="game-board">
+      <!-- Карточки со сценариями будут созданы динамически с помощью JavaScript -->
+    </div>
+    <span class="exit-button" onclick="exitGame()">✖</span>
+    <button id="confirm-selection-button" class="check-button">Подтвердить выбор</button>
+
+
+  <script src="round4_4.js"></script>
+  <script>
+    function exitGame() {
+      window.location.href = "../index.html";
+    }
+  </script>
+</body>
+</html>

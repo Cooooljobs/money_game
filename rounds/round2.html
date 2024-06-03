@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Раунд 2 - ВАЛЮТЫ</title>
+  <link rel="stylesheet" href="round2.css">
+  <link rel="icon" href="../media/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+  <video id="background-video" autoplay loop muted>
+    <source src="../media/background.webm" type="video/mp4">
+  </video>
+
+  <div class="container">
+    <h1>РАУНД 2 - ВАЛЮТЫ</h1>
+    <h4> <b>Задание: Необходимо вспомнить, какой символ относится к какой валюте.</b><br></h4>
+      <h4>Перетаскивайте валюты из левого контейнера к соответствующим символу в правом контейнере. <br>
+    Если вы сделали правильное соответствие, блоки подсветятся зеленым цветом.<br>
+    Если вы сделали неправильный выбор, можете попробовать снова.</h4> <br><br>
+    
+    <div class="game-board">
+      <div class="terms" id="term-container">
+        <!-- Термины будут добавлены здесь динамически -->
+      </div>
+      <div class="definitions" id="definition-container">
+        <!-- Определения будут добавлены здесь динамически -->
+      </div>
+    </div>
+    <span class="exit-button" onclick="exitGame()">✖</span>
+  </div>
+
+  <script src="round2.js"></script>
+  <script>
+    function exitGame() {
+      window.location.href = "../index.html";
+    }
+  </script>
+</body>
+</html>
